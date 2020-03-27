@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logoImg from '../../assets/logo.svg';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
-
+import Swal from 'sweetalert2';
 import api from '../../services/api';
 
 import './styles.css'
@@ -29,6 +29,11 @@ export default function NewIncident() {
           Autorization: ongId
         }
       });
+      Swal.fire(
+        'Caso criado com sucesso!',
+        ``,
+        'success'
+      );
       history.push('/profile');
     } catch (error) {
       alert('Erro ao cadastrar caso, tente novamente')

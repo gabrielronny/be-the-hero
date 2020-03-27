@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 import logoImg from '../../assets/logo.svg';
+
+
+
 
 import api from '../../services/api';
 import './styles.css';
@@ -29,7 +33,11 @@ export default function Register() {
 
     try {
       const response = await api.post('ongs', data);
-      alert(`Seu ID de acesso: ${response.data.id}`);
+      Swal.fire(
+        'Usuário criado com sucesso!',
+        `Seu ID de acesso: ${response.data.id}`,
+        'success'
+      );
       history.push('/');
       
     } catch (error) {
