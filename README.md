@@ -4,9 +4,6 @@
 Oministack 11.0.
 
 ![](/Imagens/home.png)
-![](/Imagens/ong-dashboard.png)
-
-
 
 ### Tecnologias utilizadas
 
